@@ -1,8 +1,8 @@
 # Optional chaining operator
 
-Muitas novidades são esperadas com a chegada das especificações para o ES2020. Uma delas que veio para simplificar a vida e diminuir a quantidade de código que temos que escrever é o [operador de encadeamento opcional][Optional chaining operator] `?.` - Optional chaining em inglês.
+Muitas novidades são esperadas com a chegada do ES2020. Uma delas que veio para simplificar a vida e diminuir a quantidade de código que temos que escrever é o [operador de encadeamento opcional][Optional chaining operator] `?.` - Optional chaining em inglês.
 
-O funcionamento dele é similar ao do `.` operador de encadeamento, exceto que ao invés de causar um erro ao tentar acessar uma propriedade de uma referência vazia (`null` ou `undefined`), a expressão irá retornar undefined.
+O funcionamento dele é similar ao do operador de encadeamento `.`, exceto que ao invés de causar um erro ao tentar acessar uma propriedade de uma referência vazia (`null` ou `undefined`), a expressão irá retornar undefined.
 
 Isso pode ser muito util ao explorar conteúdo de um objeto onde não se tem garantia de que as propriedades são obrigatórias.
 
