@@ -48,4 +48,4 @@ Para corrigir isso você deve envolver a expressão em parênteses para explicit
 
 ## Relação com o operador de encadeamento opcional (`?.`)
 
-O operador `??` trata os especificamente os valores `null` e `undefined`, assim como o operador de encadeamento opcional (`?.`), que é usado para acessar propriedades de um objeto que podem ser `null` ou `undefined`.
+O operador `??` trata os especificamente os valores `null` e `undefined`, assim como o [operador de encadeamento opcional (`?.`)](https://www.linkedin.com/pulse/es2020-optional-chaining-operator-mesaque-do-nascimento-francisco/), que é usado para acessar propriedades de um objeto que podem ser `null` ou `undefined`.
