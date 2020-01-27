@@ -1,21 +1,21 @@
-
 # Programação no estilo funcional em Javascript, Promises e dores de cabeça
+
 Quem desenvolve em javascript já deve ter se deparado com algumas funções de operações sobre objetos iteráveis (`forEach`, `map`, `reduce`):
 
 ```javascript
 const list = ['apple', 'banana', 'watermelon'];
 
 // forEach
-list.forEach((item) => {
-    console.log('Item:', item);
+list.forEach(item => {
+  console.log('Item:', item);
 });
 
 // map
-const changedList = list.map((item) => item + 1);
+const changedList = list.map(item => item + 1);
 
 // reduce
 const itemSum = list.reduce((accumulated, item) => {
-    return accumulated + item;
+  return accumulated + item;
 }, 0);
 ```
 
@@ -34,9 +34,9 @@ Em algum momento você pode se deparar com uma situação em que tenha uma lista
 ```javascript
 const fruits = ['apple', 'lemon', 'orange'];
 
-fruits.forEach(async (fruit) => {
-    const result = await doNetworkCall(fruit);
-    doSomethingElseSynchronously(fruit, result);
+fruits.forEach(async fruit => {
+  const result = await doNetworkCall(fruit);
+  doSomethingElseSynchronously(fruit, result);
 });
 ```
 
@@ -46,10 +46,10 @@ Conhecendo o funcionamento do `async/await` é esperado que o código acima func
 
 Isso acontece porque tanto o `forEach` quanto seus companheiros `map` e `reduce` por serem mais antigos que a especificação da `Promise` e `async/await` simplesmente não são compatíveis com essas features.
 
-Para exemplificar melhor, uma versão **muito** simplificada do `forEach` seria: 
+Para exemplificar melhor, uma versão **muito** simplificada do `forEach` seria:
 
 ```javascript
-Array.prototype.forEach = function (callback) {
+Array.prototype.forEach = function(callback) {
   for (let i = 0; i < this.length; i++) {
     callback(this[i], i, this);
   }
@@ -59,6 +59,7 @@ Array.prototype.forEach = function (callback) {
 Como você pode notar, `callback` não está sendo aguardado (`await`) dentro do `forEach`, logo, a cadeia de `Promises` é quebrada, resultando no comportamento inesperado.
 
 ## Solução
+
 A solução é não usar esses métodos quando trabalhar com operações assíncronas. Usar o bom e velho "for raiz" garantirá que o resultado será o esperado.
 
 ```javascript
@@ -73,6 +74,7 @@ async doAsyncProcess(fruits) {
 ```
 
 ## Ressalvas
+
 O textão acima exemplifica casos onde você precisa garantir que as operações sejam realizadas na ordem em que aparecem no objeto iterável. Caso seja possível fazer as operações em paralelo, você pode usar do combo `await Promise.all` + `Array.map` para realizar as operações:
 
 ```javascript
@@ -85,11 +87,13 @@ async doAsyncProcess(fruits) {
     doMoreSynchronousStuff();
 }
 ```
+
 :warning: **Nota**  
 Nesse exemplo, `Promise.all` está sendo utilizado apenas para aguardar a resolução de todas as promises que são implicitamente criadas com o método `.map` antes de continuar com execução da função `doMoreSynchronousStuff`. Sabemos que `.map` cria promises pois a função que é aplicada durante a iteração está marcada como `async`, logo seu retorno sempre é uma `Promise`.
 
 Caso o restante do código dependesse dos valores resolvidos das promises, alguns ajustes seriam necessários no código, na função aplicada durante o `map` e nos valores aguardados de `Promise.all`.
 
 ## Bônus
+
 Código de exemplos está disponível no codepen:  
 [https://codepen.io/mesaquen/pen/JgXxZL?editors=1111](https://codepen.io/mesaquen/pen/JgXxZL?editors=1111)

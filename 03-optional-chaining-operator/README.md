@@ -1,6 +1,6 @@
 # Optional chaining operator
 
-Muitas novidades são esperadas com a chegada do ES2020. Uma delas que veio para simplificar a vida e diminuir a quantidade de código que temos que escrever é o [operador de encadeamento opcional][Optional chaining operator] `?.` - Optional chaining em inglês.
+Muitas novidades são esperadas com a chegada do ES2020. Uma delas que veio para simplificar a vida e diminuir a quantidade de código que temos que escrever é o [operador de encadeamento opcional][optional chaining operator] `?.` - Optional chaining em inglês.
 
 O funcionamento dele é similar ao do operador de encadeamento `.`, exceto que ao invés de causar um erro ao tentar acessar uma propriedade de uma referência vazia (`null` ou `undefined`), a expressão irá retornar undefined.
 
@@ -27,31 +27,29 @@ console.log(cloathingName);
 const clothingName = player.clothing?.name;
 console.log(cloathingName); // expected output: undefined
 
-
 // Correto, porém verboso
 let value;
 if (player != null && typeof player.someNonExistentMethod === 'function') {
- value = player.someNonExistentMethod();
+  value = player.someNonExistentMethod();
 }
 console.log(value);
 
 // Usando optional chaining
-console.log(player.someNonExistentMethod?.()) // expected output: undefined
+console.log(player.someNonExistentMethod?.()); // expected output: undefined
 ```
 
 ## Sintaxe
 
 ```javascript
-object?.prop
-object?.[expression]
-arr?.[index]
-func?.(args)
+object?.prop;
+object?.[expression];
+arr?.[index];
+func?.(args);
 ```
 
 O novo operador de encadeamento opcional ajuda reduzir a quantidade de código escrita, simplificando a leitura e manutenção.
 
-Junto com o optional chaining operator receberemos o [Nullish coalescing operator][Nullish coalescing operator], mas isso é assunto para um post futuro.
+Junto com o optional chaining operator receberemos o [Nullish coalescing operator][nullish coalescing operator], mas isso é assunto para um post futuro.
 
-
-[Optional chaining operator]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining
-[Nullish coalescing operator]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_Coalescing_Operator
+[optional chaining operator]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining
+[nullish coalescing operator]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_Coalescing_Operator

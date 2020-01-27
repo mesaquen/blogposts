@@ -1,6 +1,6 @@
 # ES2020: Nullish coalescing operator (`??`)
 
-O [*operador de coalescência nula* (`??`)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing_operator) é um operador lógico que retorna o operando do lado direito caso o valor do operando do lado esquerdo seja `null` ou `undefined`. Caso contrário, retorna o operando do lando esquerdo.
+O [_operador de coalescência nula_ (`??`)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing_operator) é um operador lógico que retorna o operando do lado direito caso o valor do operando do lado esquerdo seja `null` ou `undefined`. Caso contrário, retorna o operando do lando esquerdo.
 
 Diferente do [operador lógico OR (`||`)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_Operators#Logical_OR_2), o operando do lado esquerdo é retornado caso seja um valor [falsy](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_Operators#Description) que não seja `null` ou `undefined`.
 

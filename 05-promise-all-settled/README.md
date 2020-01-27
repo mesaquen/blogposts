@@ -32,13 +32,17 @@ O novo método `Promise.allSettled` é bem útil quando você precisa executar u
 Usando `Promise.all` você teria que adicionar um `.catch` para cada promise que será executada. Para evitar que o retorno de `Promise.all` seja uma promise rejeitada.
 
 ```javascript
-const download = async (url) => {/*...*/};
-const handleFailedDownload = async url => {/*...*/};
+const download = async url => {
+  /*...*/
+};
+const handleFailedDownload = async url => {
+  /*...*/
+};
 
 const downloadAllFiles = async () => {
   const urls = [
-    "http://example.com/exists.txt",
-    "http://example.com/missing-file.txt"
+    'http://example.com/exists.txt',
+    'http://example.com/missing-file.txt',
   ];
 
   await Promise.all(urls.map(url => download(url).catch(handleFailedDownload)));
@@ -72,12 +76,12 @@ Abaixo você encontra uma representação da assinatura dos retornos de `Promise
 type SettlementObject<T> = FulFillmentObject<T> | RejectionObject<T>;
 
 interface SettlementObject<T> {
-  status: "fulfilled";
+  status: 'fulfilled';
   value: T;
 }
 
 interface RejectionObject {
-  status: "rejected";
+  status: 'rejected';
   reason: unknown;
 }
 ```
@@ -86,9 +90,9 @@ interface RejectionObject {
 
 ```javascript
 const results = Promise.allSettled([
-  Promise.resolve("OK"),
-  Promise.reject("ERROR"),
-  Promise.resolve("OK TOO")
+  Promise.resolve('OK'),
+  Promise.reject('ERROR'),
+  Promise.resolve('OK TOO'),
 ]);
 
 console.log(results);
