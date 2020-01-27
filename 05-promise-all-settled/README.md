@@ -4,7 +4,7 @@ Uma nova adição que chega com o ES2020 é `Promise.allSettled`. Esse novo mét
 
 ## Relembrando: Promises
 
-[Promises](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Promise) é um objeto usado para processamento assíncrono. Uma `Promise` representa um valor que pode estar disponível agora, no futuro ou nunca.
+[`Promise`](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Promise) é um objeto usado para processamento assíncrono. Uma `Promise` representa um valor que pode estar disponível agora, no futuro ou nunca.
 
 Uma`Promise` pode se encontrar em algum dos estados:
 
