@@ -1,0 +1,22 @@
+{
+  "name": "blogposts",
+  "version": "1.0.0",
+  "description": "Repositório destinado aos textos das publicações realizadas no perfil do [LinkedIn](https://linkedin.com/in/mesaquen) ou divulgadas em meetups ou newsletters.",
+  "scripts": {
+    "prettier": "prettier --check **/*.md",
+    "format": "prettier --write **/*.md"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mesaquen/blogposts.git"
+  },
+  "author": "Mesaque Francisco",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mesaquen/blogposts/issues"
+  },
+  "homepage": "https://github.com/mesaquen/blogposts#readme",
+  "devDependencies": {
+    "prettier": "^1.19.1"
+  }
+}
