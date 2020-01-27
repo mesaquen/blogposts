@@ -34,9 +34,8 @@ O novo método `Promise.allSettled` é bem útil quando você precisa executar u
 Usando `Promise.all` você teria que adicionar um `.catch` para cada promise que será executada. Para evitar que o retorno de `Promise.all` seja uma promise rejeitada.
 
 ```javascript
-const handleFailedDownload = async url => {
-  /*...*/
-};
+const download = async (url) => {/*...*/};
+const handleFailedDownload = async url => {/*...*/};
 
 const downloadAllFiles = async () => {
   const urls = [
