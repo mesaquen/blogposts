@@ -19,15 +19,15 @@ const itemSum = list.reduce((accumulated, item) => {
 }, 0);
 ```
 
-Esses caras já estão aí há algum tempo e são uma forma funcional de realizar operações sobre esse tipo de objetos.
+Esses métodos estão disponíveis há algum tempo e são uma forma funcional de realizar operações sobre esse tipo de objetos.
 
-Um dos conceitos na programação funcional é que você escreve seu código de maneira mais descritiva, se preocupando em dizer **o que acontece**, não **como acontece**.
+Um dos conceitos na programação funcional é que você escreve seu código de maneira descritiva, se preocupando em dizer **o que acontece**, não **como acontece**.
 
 Comparar o `.forEach` com um `for (;;)` ("for raiz") é um bom exemplo pois no `forEach` você não se preocupa em controlar os passos da iteração sobre o objeto, seu foco é direcionada para o que deve acontecer para cada item durante a iteLração. Já em um "for raiz", além de se preocupar com o que deve acontecer com o item em questão, você precisa se preocupar com como os itens são recuperados, como conseguir o próximo item e quantas vezes o laço será executado.
 
 Desde o ES6 temos a possibilidade de trabalhar com código assíncrono no javascript sem ter que passar aquele zilhão de callbacks (a.k.a. callback hell). As maravilhas tecnológicas por trás disso são as [Promises](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Promise).
 
-Com a chegada do ES8 para facilitar a vida dos desenvolvedores, que são criaturas insatisfeitas por natureza, foi lançada a especificação de funções [async/await](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Operators/await) - mais conteúdo [aqui](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Async_await).
+Com a chegada do ES8 para facilitar a vida dos desenvolvedores, que são criaturas insatisfeitas por natureza, foi disponiblilizada a especificação de funções [async/await](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Operators/await) - mais conteúdo [aqui](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Async_await).
 
 Em algum momento você pode se deparar com uma situação em que tenha uma lista e precisa realizar alguma operação assíncrona com os itens dessa lista, na ordem em que eles aparecem na lista. Provavelmente você pode brotar com uma solução parecida com essa:
 
@@ -44,7 +44,7 @@ Conhecendo o funcionamento do `async/await` é esperado que o código acima func
 
 ![async fail](./fail.png)
 
-Isso acontece porque tanto o `forEach` quanto seus companheiros `map` e `reduce` por serem mais antigos que a especificação da `Promise` e `async/await` simplesmente não são compatíveis com essas features.
+Isso acontece porque tanto o `forEach` quanto seus companheiros `map` e `reduce` por serem mais antigos que a especificação de `Promise` e `async/await` simplesmente não são compatíveis com essas features.
 
 Para exemplificar melhor, uma versão **muito** simplificada do `forEach` seria:
 
