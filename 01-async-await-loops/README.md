@@ -23,7 +23,7 @@ Esses métodos estão disponíveis há algum tempo e são uma forma funcional de
 
 Um dos conceitos na programação funcional é que você escreve seu código de maneira descritiva, se preocupando em dizer **o que acontece**, não **como acontece**.
 
-Comparar o `.forEach` com um `for (;;)` ("for raiz") é um bom exemplo pois no `forEach` você não se preocupa em controlar os passos da iteração sobre o objeto, seu foco é direcionada para o que deve acontecer para cada item durante a iteLração. Já em um "for raiz", além de se preocupar com o que deve acontecer com o item em questão, você precisa se preocupar com como os itens são recuperados, como conseguir o próximo item e quantas vezes o laço será executado.
+Comparar o `.forEach` com um `for (;;)` ("for raiz") ou um `for-of` é um bom exemplo pois no `forEach` você não se preocupa em controlar os passos da iteração sobre o objeto, seu foco é direcionada para o que deve acontecer para cada item durante a iteLração. Já em um "for raiz", além de se preocupar com o que deve acontecer com o item em questão, você precisa se preocupar com como os itens são recuperados, como conseguir o próximo item e quantas vezes o laço será executado.
 
 Desde o ES6 temos a possibilidade de trabalhar com código assíncrono no javascript sem ter que passar aquele zilhão de callbacks (a.k.a. callback hell). As maravilhas tecnológicas por trás disso são as [Promises](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Promise).
 
@@ -60,13 +60,11 @@ Como você pode notar, `callback` não está sendo aguardado (`await`) dentro do
 
 ## Solução
 
-A solução é não usar esses métodos quando trabalhar com operações assíncronas. Usar o bom e velho "for raiz" garantirá que o resultado será o esperado.
+A solução é não usar esses métodos quando trabalhar com operações assíncronas. Usar o bom e velho "for raiz" ou um `for-of` garantirá que o resultado será o esperado.
 
 ```javascript
 async doAsyncProcess(fruits) {
-    for (let i=0; i < fruits.lenth; i++) {
-        const fruit = fruits[i];
-
+    for (const fruit of fruits) {
         const result = await doNetworkCall(fruit);
         doSomethingElseSynchronously(fruit, result);
     }
@@ -95,5 +93,4 @@ Caso o restante do código dependesse dos valores resolvidos das promises, algun
 
 ## Bônus
 
-Código de exemplos está disponível no codepen:  
-[https://codepen.io/mesaquen/pen/JgXxZL?editors=1111](https://codepen.io/mesaquen/pen/JgXxZL?editors=1111)
+Código de [exemplos está disponível no codepen.](https://codepen.io/mesaquen/pen/JgXxZL?editors=0011)
