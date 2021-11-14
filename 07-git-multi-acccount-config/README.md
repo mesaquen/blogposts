@@ -28,12 +28,11 @@ Development/
 └── my-project-n
 ```
 
-Para configurar uma conta diferente para seus projetos pessoais, projetos sob o diretório  `CompanyA` e projetos sob o diretório `CompanyB`, podemos fazer uso da [Inclusão condicional] de configurações no seu arquivo `.gitconfig`
+Para configurar uma conta diferente para seus projetos pessoais, projetos sob o diretório `CompanyA` e projetos sob o diretório `CompanyB`, podemos fazer uso da [inclusão condicional] de configurações no seu arquivo `.gitconfig`
 
 A forma de como vamos trabalhar é deixando no arquivo `.gitconfig` todas as configurações compartilhadas e criar arquivos com configurações específicas para cada diretório.
 
 **.gitconfig**
-
 
 Seu arquivo `.gitconfig` se parecerá com assim:
 
@@ -54,7 +53,6 @@ Seu arquivo `.gitconfig` se parecerá com assim:
 
 **.gitconfig-company-a**
 
-
 Seu arquivo `.gitconfig-company-a` se parecerá com assim:
 
 ```
@@ -64,7 +62,6 @@ Seu arquivo `.gitconfig-company-a` se parecerá com assim:
 ```
 
 **.gitconfig-company-b**
-
 
 Seu arquivo `.gitconfig-company-b` se parecerá com assim:
 
@@ -104,4 +101,4 @@ git config user.email
 
 Esse comando retornará o email atual utilizado para os commits.
 
-[Inclusão condicional]: https://git-scm.com/docs/git-config#_conditional_includes
+[inclusão condicional]: https://git-scm.com/docs/git-config#_conditional_includes
