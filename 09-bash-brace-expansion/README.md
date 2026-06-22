@@ -13,7 +13,7 @@ chmod 600 file01.pdf file05.pdf file09.pdf
 ```
 
 But, as a developer, some times we just have that itch to spend 30 minutes
-trying a easier way of doing something that usually takes 20 seconds. Just
+trying an easier way of doing something that usually takes 20 seconds. Just
 for the sake of future proof your repo.
 
 To make things challenging I didn't want to update needlessly the files that
